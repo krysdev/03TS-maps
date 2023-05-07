@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-// named export (so to import in index.ts the {} are needed) 
+// named export (so to import it in index.ts the {} are needed) 
 export class User {
   // we have only type annotations below, the properties have not been initialized
   name: string;
