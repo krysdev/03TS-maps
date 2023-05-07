@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker'; // no need to install type definitions - already in TS
 
 // named export (so to import it in index.ts the {} are needed) 
 export class User {

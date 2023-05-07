@@ -1,7 +1,13 @@
 <html>
   <body>
+    <div id="map" style="height: 100%"></div>
+
+    <!--
+      Type definition files can be installed also for the sript tags, and not only for the 3rd party libraries.
+      So we have installed "@types/google.maps": "^3.53.0"
+      Also at the first line in the index.ts file we have a triple dash directive
+    -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNLrJhOMz6idD05pzfn5lhA-TAw-mAZCU&callback=Function.prototype"></script>
     <script type="module" src="./src/index.ts"></script>
-    index.html
   </body>
 </html>
