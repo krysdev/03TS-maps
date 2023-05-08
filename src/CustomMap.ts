@@ -19,16 +19,14 @@ export class CustomMap {
       }
     );
   }
-  
-  addUserMarker(user: User): void {
+
+  addMarker(mapMarker: User): void {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng,
+        lat: mapMarker.location.lat,
+        lng: mapMarker.location.lng,
       },
     });
   }
-
-  addCompanyMarker(company: Company): void {}
 }
