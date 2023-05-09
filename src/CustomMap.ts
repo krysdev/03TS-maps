@@ -1,6 +1,12 @@
 /// <reference types="@types/google.maps" />
-import { User } from './User';
-import { Company } from './Company';
+
+// this interface tells every other class how they can be an argument to 'addMarker' method
+interface MapMarker {
+  location: {
+    lat: number;
+    lng: number;
+  };
+}
 
 export class CustomMap {
   // 'googleMap' property has a type of the instance of the Map() class
@@ -20,7 +26,8 @@ export class CustomMap {
     );
   }
 
-  addMarker(mapMarker: User): void {
+  // 'addMarker' can take any argument unless it satisfies the 'MapMaker' interface (arg.location.lat and lng)
+  addMarker(mapMarker: MapMarker): void {
     new google.maps.Marker({
       map: this.googleMap,
       position: {

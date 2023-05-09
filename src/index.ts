@@ -14,3 +14,4 @@ const customMap = new CustomMap('map')
 
 // CustomMap class in CustomMap.ts has the below method, and the argument to be passed
 customMap.addMarker(user);
+customMap.addMarker(company);
