@@ -1,11 +1,14 @@
 /// <reference types="@types/google.maps" />
 
 // this interface tells every other class how they can be an argument to 'addMarker' method
-interface MapMarker {
+// an interface can be exported, so it can be used in other files and refered to it as a separate type
+export interface MapMarker {
   location: {
     lat: number;
     lng: number;
   };
+  markerPopup(): string;
+  // test: string;
 }
 
 export class CustomMap {
@@ -26,14 +29,23 @@ export class CustomMap {
     );
   }
 
-  // 'addMarker' can take any argument unless it satisfies the 'MapMaker' interface (arg.location.lat and lng)
+  // 'addMarker' can take any argument unless it satisfies the 'MapMarker' interface (arg.location.lat and lng)
   addMarker(mapMarker: MapMarker): void {
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mapMarker.location.lat,
         lng: mapMarker.location.lng,
       },
+    });
+
+    // showing pop up on click
+    marker.addListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        // content: 'Hi there!',
+        content: mapMarker.markerPopup(),
+      });
+      infoWindow.open(this.googleMap, marker);
     });
   }
 }

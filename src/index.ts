@@ -12,6 +12,7 @@ const company = new Company();
 
 const customMap = new CustomMap('map')
 
-// CustomMap class in CustomMap.ts has the below method, and the argument to be passed
+// CustomMap class in CustomMap.ts has the below method, and the argument has to be passed
+// TypeScript does the implicit check to see if the argument satisfies the 'MapMarker' interface
 customMap.addMarker(user);
 customMap.addMarker(company);
