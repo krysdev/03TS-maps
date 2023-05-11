@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker'; // no need to install type definitions - already in TS
 import { MapMarker } from './CustomMap'; // imported interface -> 'implements'
 
-// named export (so to import it in index.ts the {} are needed)
-// the instance of the class must satisfy all the properites required by the 'MapMaker' interface  [this is optional]
+// named export (not default, so to import it in index.ts the {} are needed)
+// 'implements' means the instance of the class must satisfy all the properites required by the 'MapMaker' interface  [this is optional]
 export class User implements MapMarker {
   // we have only type annotations below, the properties have not been initialized
   name: string;
